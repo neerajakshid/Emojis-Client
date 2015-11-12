@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainHome">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/tvSelectedEmotion" />
+
+    <RelativeLayout
+        android:id="@+id/rlDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:id="@+id/rlSelectedEmotion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/rlDetails">
+
+            <ImageView
+                android:id="@+id/ivSelectedEmotion"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:padding="@dimen/padding_10dp" />
+
+            <TextView
+                android:id="@+id/tvSelectedEmotion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/ivSelectedEmotion"
+                android:layout_toRightOf="@+id/ivSelectedEmotion"
+                android:padding="@dimen/padding_10dp"/>
+
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/gvEmotions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/rlSelectedEmotion"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_below="@+id/linearLayout"
+            android:columnWidth="30dp"
+            android:gravity="center"
+            android:listSelector="@color/lightPrimary"
+            android:numColumns="6" />
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/pbImage"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+</RelativeLayout>
+
